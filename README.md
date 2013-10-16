@@ -31,7 +31,7 @@ alt+shift+b - Parse active file and open result in new tab
 
 # Notes
 
-**Ideas**
+**Ideas to do**
 
 - Syntax highlighting for blueprint
 - Syntax highliting for AST (yaml, json)
