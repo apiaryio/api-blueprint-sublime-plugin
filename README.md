@@ -31,6 +31,8 @@ alt+shift+b - Parse active file and open result in new tab
 
 # Notes
 
+**Ideas**
+
 - Syntax highlighting for blueprint
 - Syntax highliting for AST (yaml, json)
 - Show in browser preview of [Apiary](http://apiary.io/)interacitive Documentation
