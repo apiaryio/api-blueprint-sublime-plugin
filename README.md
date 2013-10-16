@@ -37,6 +37,6 @@ alt+shift+b - Parse active file and open result in new tab
 - Syntax highliting for AST (yaml, json)
 - Show in browser preview of [Apiary](http://apiary.io/)interacitive Documentation
 - Generate and show static HTML documentation from [Iglo](https://github.com/subosito/iglo)
-- Parse to JSON AST
+- Show AST in JSON
 
 [Many thanks for inspiration](http://xavura.github.com/CoffeeScript-Sublime-Plugin)
