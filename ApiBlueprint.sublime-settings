@@ -1,0 +1,7 @@
+{
+  /*
+    The directory containing your snowcrash binary. Usually
+    /usr/local/bin.
+  */
+  "binDir": "/usr/local/bin"
+}

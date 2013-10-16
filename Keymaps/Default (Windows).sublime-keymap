@@ -1,0 +1,3 @@
+[
+  {"keys": ["alt+shift+b"], "command": "parse_yaml_ast", "args": {"opt": ["-f", "yaml"]}}
+]

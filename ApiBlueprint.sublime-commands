@@ -1,0 +1,7 @@
+[
+  {
+    "caption": "API Blueprint: Parse to YAML AST",
+    "command": "parse_yaml_ast",
+    "args": {"opt": ["-f", "yaml"]}
+  }
+]
