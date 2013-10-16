@@ -41,7 +41,7 @@ def run_command(cmd, args = [], source="", cwd = None, env = None):
       env = {"PATH": settings.get('binDir', '/usr/local/bin')}
 
     command = [cmd] + args
-    print command 
+    π
     proc = Popen(command, env=env, cwd=cwd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
     stat = proc.communicate(input=source)
   
