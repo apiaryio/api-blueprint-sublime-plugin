@@ -4,7 +4,7 @@ This plugin will help you write [API Blueprints](http://apiblueprint.org/) in yo
 
 ## Requirements
 
-[Install](http://apiblueprint.org/#get-started) API Blueprint command-line parser `snowcrash` first, please!
+- [Install](http://apiblueprint.org/#get-started) API Blueprint command-line parser `snowcrash` first, please!
 
 ## Installation
 
@@ -31,7 +31,10 @@ alt+shift+b - Parse active file and open result in new tab
 
 # Notes
 
-- Syntax highlighting
+- Syntax highlighting for blueprint
+- Syntax highliting for AST (yaml, json)
+- Show in browser preview of [Apiary](http://apiary.io/)interacitive Documentation
+- Generate and show static HTML documentation from [Iglo](https://github.com/subosito/iglo)
 - Parse to JSON AST
 
 [Many thanks for inspiration](http://xavura.github.com/CoffeeScript-Sublime-Plugin)
