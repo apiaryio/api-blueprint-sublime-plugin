@@ -67,11 +67,9 @@ class ParseYamlAstCommand(TextCommand):
 
     output = self.view.window().new_file()
     output.set_scratch(True)
+    output.set_syntax_file('Packages/YAML/YAML.tmLanguage')
 
     if result["okay"] is True:
       output.insert(edit, 0, body)
     else:
       output.insert(edit, 0, body)
-
-
-      
