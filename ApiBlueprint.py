@@ -1,6 +1,7 @@
 import sublime
 import sublime_plugin
 import sys
+import os
 
 from os import path
 from subprocess import Popen, PIPE
@@ -43,17 +44,17 @@ def run_command(cmd, args = [], source="", cwd = None, env = None):
     command = [cmd] + args
     
     proc = Popen(command, env=env, cwd=cwd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    stat = proc.communicate(input=source)
+    stat = proc.communicate(input=source.encode('utf-8'))
   
   okay = proc.returncode == 0
   
   #remove leading empty line
-  lines = stat[1].split('\n')
+  lines = stat[1].decode('UTF-8').split('\n')
   if not lines[0]:
     lines.pop(0)
   sanitized_errout = '\n'.join(lines)
 
-  return {"okay": okay, "out": stat[0], "err": sanitized_errout}
+  return {"okay": okay, "out": stat[0].decode('UTF-8'), "err": sanitized_errout}
 
 class ParseYamlAstCommand(TextCommand):
   def run(self, edit, **kwargs):
