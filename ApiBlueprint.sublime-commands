@@ -3,5 +3,10 @@
     "caption": "API Blueprint: Parse to YAML AST",
     "command": "parse_yaml_ast",
     "args": {"opt": ["-f", "yaml"]}
+  },
+  {
+    "caption": "API Blueprint: Parse to JSON AST",
+    "command": "parse_json_ast",
+    "args": {"opt": ["-f", "json"]}
   }
 ]

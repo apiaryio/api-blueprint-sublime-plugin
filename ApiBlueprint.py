@@ -62,12 +62,30 @@ class ParseYamlAstCommand(TextCommand):
     
     source = Text.all(self.view)
     result = run_command ("snowcrash", args=args, source=source)
-    
+
     body = result["err"] + '\n' + result["out"]
 
     output = self.view.window().new_file()
     output.set_scratch(True)
     output.set_syntax_file('Packages/YAML/YAML.tmLanguage')
+
+    if result["okay"] is True:
+      output.insert(edit, 0, body)
+    else:
+      output.insert(edit, 0, body)
+      
+class ParseJsonAstCommand(TextCommand):
+  def run(self, edit, **kwargs):
+    opt = kwargs["opt"]
+    args = opt
+    
+    source = Text.all(self.view)
+    result = run_command ("snowcrash", args=args, source=source)
+    body = result["err"] + '\n' + result["out"]
+
+    output = self.view.window().new_file()
+    output.set_scratch(True)
+    output.set_syntax_file('Packages/JSON/JSON.tmLanguage')
 
     if result["okay"] is True:
       output.insert(edit, 0, body)
