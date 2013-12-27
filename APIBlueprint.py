@@ -7,7 +7,7 @@ from os import path
 from subprocess import Popen, PIPE
 from sublime_plugin import TextCommand, WindowCommand
 
-settings = sublime.load_settings('ApiBlueprint.sublime-settings')
+settings = sublime.load_settings('APIBlueprint.sublime-settings')
 
 class Text():
         @staticmethod
