@@ -86,7 +86,7 @@ class ParseJsonAstCommand(TextCommand):
 
     output = self.view.window().new_file()
     output.set_scratch(True)
-    output.set_syntax_file('Packages/JSON/JSON.tmLanguage')
+    output.set_syntax_file('Packages/JavaScript/JSON.tmLanguage')
 
     if result["okay"] is True:
       output.insert(edit, 0, body)
