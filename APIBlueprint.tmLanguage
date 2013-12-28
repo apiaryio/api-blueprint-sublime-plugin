@@ -21,7 +21,7 @@
   <key>keyEquivalent</key>
   <string>^~M</string>
   <key>name</key>
-  <string>APIBlueprint</string>
+  <string>API Blueprint</string>
   <key>patterns</key>
   <array>
     <dict>
