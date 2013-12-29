@@ -7,8 +7,6 @@ from os import path
 from subprocess import Popen, PIPE
 from sublime_plugin import TextCommand, WindowCommand
 
-settings = sublime.load_settings('APIBlueprint.sublime-settings')
-
 class Text():
         @staticmethod
         def all(view):
@@ -30,6 +28,8 @@ class Text():
                 return Text.all(view)
 
 def run_command(cmd, args = [], source="", cwd = None, env = None):
+  settings = sublime.load_settings('APIBlueprint.sublime-settings')
+
   if not type(args) is list:
     args = [args]
   
