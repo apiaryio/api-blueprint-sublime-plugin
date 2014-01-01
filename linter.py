@@ -57,4 +57,4 @@ try:
     ApiBlueprintFactory()
     
 except ImportError:
-    print("No SublimeLinter3 installed – Install SublimeLinter3 to lint your API blueprints")
+    print("No SublimeLinter3 installed - Install SublimeLinter3 to lint your API blueprints")
