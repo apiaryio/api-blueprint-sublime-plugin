@@ -1,34 +1,55 @@
-# API Blueprint Sublime Text Plug-in
-This plugin will help you with writing [API blueprints](http://apiblueprint.org/) in Sublime Text. This plug-in works both with Sublime Text 2 and 3. 
+# API Blueprint Sublime Text Plugin
+This is the official [API Blueprint](http://apiblueprint.org/) plugin for [Sublime Text](http://www.sublimetext.com) with following features:
+
+- Syntax highlighting for the `API Blueprint` format
+- Compiling blueprint into its [AST media-type](https://github.com/apiaryio/snowcrash/wiki/API-Blueprint-AST-Media-Types)
+- Live linting of blueprints as you type using `SublimeLinter3`
+
+This plug-in works both with **Sublime Text 2 and 3**. However linting is supported on Sublime Text 3 only.
 
 ## Requirements
-- [Install](http://apiblueprint.org/#get-started) API Blueprint command-line parser `snowcrash` first.
+
+### Snow Crash
+In order for this plugin to work properly you need to have the API Blueprint command line tool `snowcrash` installed. 
+
+To install `Snow Crash` on OS X using run the following command: 
+```sh
+$ brew install --HEAD \
+  https://raw.github.com/apiaryio/snowcrash/master/tools/homebrew/snowcrash.rb
+```
+
+Refer to [Snow Crash](https://github.com/apiaryio/snowcrash#install) installation notes for details on installing on [OS X & Linux](https://github.com/apiaryio/snowcrash#snow-crash-command-line-tool) or [Windows](https://github.com/apiaryio/snowcrash/wiki/Building-on-Windows).
+
+### SublimeLinter3 (optional)
+This plugin offers linting of your blueprints using the [SublimeLinter3](https://github.com/SublimeLinter/SublimeLinter3) plugin framework. In order for linting to work please [install](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Installation) `SublimeLinter3`.
 
 ## Installation
-Sublime Text 2 stores packages in the following locations:
 
+### Using Package Control
+TODO: Call for contribution.
 
-	Nix: ~/.config/sublime-text-2/packages
-	Mac: ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-	Win: %APPDATA%\Sublime Text 2\Packages
+### From the Source 
+With `Snow Crash` [installed](#requirements) run the following command in your Sublime Text 3 packages directory:
 
-Open a terminal and run the following commands, replacing `PACKAGE_PATH` with the path corresponding to your OS above.
+```sh
+$ git clone https://github.com/apiaryio/api-blueprint-sublime-plugin.git  "API Blueprint"
+```
 
+Depending on your OS (and Sublime Text version) the packages directories are:
++ Linux: `~/.config/sublime-text-3/packages`
++ OS X: `~/Library/Application\ Support/Sublime\ Text\ 3/Packages`
++ Windows: `%APPDATA%\Sublime Text 3\Packages`
 
-	cd PACKAGE_PATH
-	git clone https://github.com/apiaryio/api-blueprint-sublime-plugin.git "API Blueprint"
-
-## Commands
+## Using the Plugin
+### Commands
 You can access the commands either using the command palette (`CTRL+SHIFT+P` or `CMD+SHIFT+P`) or via shortcuts.
 
-## Shortcuts
-`ALT+SHIFT+B` - Parse the active file and open result [AST](https://github.com/apiaryio/snowcrash/wiki/API-Blueprint-AST-Media-Types) including any possible parser messages in a new tab.
+### Shortcuts
+- `ALT+SHIFT+B`: Parse the active file and open result [AST](https://github.com/apiaryio/snowcrash/wiki/API-Blueprint-AST-Media-Types) including any possible parser messages in a new tab.
 
-## Possible Future Features
-- Syntax highlighting for blueprint
-- Show a preview at [Apiary](http://apiary.io/) in a browser
-- Generate and show static HTML documentation from [Iglo](https://github.com/subosito/iglo) and/or [Aglio](https://github.com/danielgtaylor/aglio)
+## Acknowledgements
++ This plugin uses parts of [CoffeeScript Sublime Plugin](http://xavura.github.com/CoffeeScript-Sublime-Plugin). 
++ Thanks to [@WMeldon](https://github.com/WMeldon) for his contribution. 
 
-# Acknowledgements
-+ Thanks for inspiration to [CoffeeScript Sublime Plugin](http://xavura.github.com/CoffeeScript-Sublime-Plugin).
-+ Thanks to [@WMeldon](https://github.com/WMeldon) for his contribution.
+## License
+MIT License. See the [LICENSE](LICENSE) file.
