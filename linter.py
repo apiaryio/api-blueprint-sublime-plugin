@@ -19,7 +19,7 @@ def ApiBlueprintFactory():
         """Provides an interface to apiblueprint."""
 
         syntax = 'apiblueprint'
-        cmd = 'snowcrash -v'
+        cmd = 'snowcrash --validate'
         executable = 'snowcrash'
         executable = None
         regex = (
