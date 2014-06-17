@@ -20,7 +20,7 @@ $ brew install --HEAD \
 Refer to [Snow Crash](https://github.com/apiaryio/snowcrash#install) installation notes for details on installing on [OS X & Linux](https://github.com/apiaryio/snowcrash#snow-crash-command-line-tool) or [Windows](https://github.com/apiaryio/snowcrash/wiki/Building-on-Windows).
 
 ### SublimeLinter3 (optional)
-This plugin offers linting of your blueprints using the [SublimeLinter3](https://github.com/SublimeLinter/SublimeLinter3) plugin framework. In order for linting to work please [install](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Installation) `SublimeLinter3`.
+This plugin offers linting of your blueprints using the [SublimeLinter3](https://github.com/SublimeLinter/SublimeLinter3) plugin framework. In order for linting to work please [install](http://sublimelinter.readthedocs.org/en/latest/installation.html) `SublimeLinter3`.
 
 ### Markdown Highlighting (optional)
 Note the API Blueprint Sublime Text syntax support relies on Markdown highlighing support in the color scheme used. For best results use a color scheme that supports Markdown-specific scopes (e.g. `markdown: heading`) such as [Monokai extended](https://github.com/jonschlinkert/sublime-monokai-extended) and [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended).
