@@ -33,18 +33,13 @@ def run_command(cmd, args = [], source="", cwd = None, env = None):
   if not type(args) is list:
     args = [args]
   
-  if sys.platform == "win32":
-    proc = Popen([cmd]+args, env=env, cwd=cwd, stdout=PIPE, stdin=PIPE, stderr=PIPE, shell=True)
-    stat = proc.communicate(input=source)
-  
-  else:
-    if env is None:
-      env = {"PATH": settings.get('binDir', '/usr/local/bin')}
+  if env is None:
+    env = {"PATH": settings.get('binDir', '/usr/local/bin')}
 
-    command = [cmd] + args
-    
-    proc = Popen(command, env=env, cwd=cwd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    stat = proc.communicate(input=source.encode('utf-8'))
+  command = [cmd] + args
+
+  proc = Popen(command, env=env, cwd=cwd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+  stat = proc.communicate(input=source.encode('utf-8'))
   
   okay = proc.returncode == 0
   
