@@ -28,7 +28,7 @@ Note the API Blueprint Sublime Text syntax support relies on Markdown highlighin
 ## Installation
 ### Using Package Control
 
-With Package Control:
+With [Package Control](https://packagecontrol.io/installation):
 
 1. Run “Package Control: Install Package” command, find and install `API Blueprint` plugin.
 2. Restart SublimeText editor (if required)
