@@ -57,7 +57,7 @@ class ParseYamlAstCommand(TextCommand):
     args = opt
     
     source = Text.all(self.view)
-    result = run_command ("snowcrash", args=args, source=source)
+    result = run_command ("drafter", args=args, source=source)
 
     body = result["err"] + '\n' + result["out"]
 
@@ -76,7 +76,7 @@ class ParseJsonAstCommand(TextCommand):
     args = opt
     
     source = Text.all(self.view)
-    result = run_command ("snowcrash", args=args, source=source)
+    result = run_command ("drafter", args=args, source=source)
     body = result["err"] + '\n' + result["out"]
 
     output = self.view.window().new_file()
