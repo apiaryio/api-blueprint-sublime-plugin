@@ -19,8 +19,8 @@ def ApiBlueprintFactory():
         """Provides an interface to apiblueprint."""
 
         syntax = 'apiblueprint'
-        cmd = 'snowcrash --validate'
-        executable = 'snowcrash'
+        cmd = 'drafter --validate'
+        executable = 'drafter'
         executable = None
         regex = (
             r'(?:(?P<warning>warning)|(?P<error>error)):\s*\((?P<code>\d+)\)'

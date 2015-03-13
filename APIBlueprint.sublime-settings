@@ -1,6 +1,6 @@
 {
   /*
-    The directory containing your snowcrash binary. Usually
+    The directory containing your drafter binary. Usually
     /usr/local/bin.
   */
   "binDir": "/usr/local/bin"
