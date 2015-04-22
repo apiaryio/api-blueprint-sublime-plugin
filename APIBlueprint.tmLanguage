@@ -1678,7 +1678,7 @@
     <key>blueprint_action</key>
     <dict>
       <key>match</key>
-      <string>^#{1,3} .*\[(HEAD|GET|PUT|POST|DELETE)\]\n?</string>
+      <string>^#{1,3} .*\[(HEAD|GET|PUT|POST|PATCH|DELETE)\]\n?</string>
       <key>name</key>
       <string>markup.heading.markdown</string>
       <key>captures</key>
@@ -1693,7 +1693,7 @@
     <key>blueprint_shorthand</key>
     <dict>
       <key>match</key>
-      <string>^# (HEAD|GET|PUT|POST|DELETE) (.*)\n?</string>
+      <string>^# (HEAD|GET|PUT|POST|PATCH|DELETE) (.*)\n?</string>
       <key>name</key>
       <string>markup.heading.markdown</string>
       <key>captures</key>
