@@ -75,6 +75,22 @@
         </dict>
         <dict>
           <key>include</key>
+          <string>#blueprint_group</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#blueprint_action</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#blueprint_resource</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#blueprint_shorthand</string>
+        </dict>
+        <dict>
+          <key>include</key>
           <string>#heading</string>
         </dict>
         <dict>
@@ -434,6 +450,28 @@
           <string>source.js</string>
         </dict>
       </array>
+    </dict>
+
+    <dict>
+      <key>captures</key>
+      <dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>constant.numeric</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>variable.language.fenced.markdown</string>
+        </dict>
+      </dict>
+      <key>begin</key>
+      <string>\+ (Request|Response) (\d+)? ?\(?(.*)\)?</string>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>name</key>
+      <string>blueprint.response</string>
     </dict>
 
     <dict>
@@ -1499,6 +1537,58 @@
       <string>\G([ ]{4}|\t).*$\n?</string>
       <key>name</key>
       <string>markup.raw.block.markdown</string>
+    </dict>
+    <key>blueprint_group</key>
+    <dict>
+      <key>match</key>
+      <string>^#{1,2} Group.*\n?</string>
+      <key>name</key>
+      <string>markup.heading.markdown</string>
+    </dict>
+    <key>blueprint_resource</key>
+    <dict>
+      <key>match</key>
+      <string>^#{1,2} .*\[(.*)\]\n?</string>
+      <key>name</key>
+      <string>markup.heading.markdown</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>markup.underline</string>
+        </dict>
+      </dict>
+    </dict>
+    <key>blueprint_action</key>
+    <dict>
+      <key>match</key>
+      <string>^#{1,3} .*\[(HEAD|GET|PUT|POST|DELETE)\]\n?</string>
+      <key>name</key>
+      <string>markup.heading.markdown</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>markup.quote</string>
+        </dict>
+      </dict>
+    </dict>
+    <key>blueprint_shorthand</key>
+    <dict>
+      <key>match</key>
+      <string>^# (HEAD|GET|PUT|POST|DELETE) (.*)\n?</string>
+      <key>name</key>
+      <string>markup.heading.markdown</string>
+      <key>captures</key>
+      <dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>markup.underline</string>
+        </dict>
+      </dict>
     </dict>
     <key>bold</key>
     <dict>
