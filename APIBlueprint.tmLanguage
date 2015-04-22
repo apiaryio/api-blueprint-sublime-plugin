@@ -101,6 +101,143 @@
     </dict>
 
     <dict>
+      <key>name</key>
+      <string>blueprint.response.json</string>
+      <key>begin</key>
+      <string>\+ (Request|Response) (\d+)? ?\(?(\(.*json\)?)</string>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>captures</key>
+      <dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>constant.numeric</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>variable.language.fenced.markdown</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#http-headers</string>
+        </dict>
+        <dict>
+          <key>begin</key>
+          <string>\+ Body</string>
+          <key>end</key>
+          <string>^(?=(?=\S)|(?=\s+\+))</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>source.js</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>comment</key>
+          <string>Ignore list items that aren't the headers of body</string>
+          <key>begin</key>
+          <string>\+</string>
+          <key>end</key>
+          <string>^(?=(?=\S)|(?=\s+\+))</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>source.js</string>
+        </dict>
+      </array>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>blueprint.response.xml</string>
+      <key>begin</key>
+      <string>\+ (Request|Response) (\d+)? ?\(?(\(.*xml\)?)</string>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>captures</key>
+      <dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>constant.numeric</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>variable.language.fenced.markdown</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#http-headers</string>
+        </dict>
+        <dict>
+          <key>begin</key>
+          <string>\+ Body</string>
+          <key>end</key>
+          <string>^(?=(?=\S)|(?=\s+\+))</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>text.xml</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>comment</key>
+          <string>Ignore list items that aren't the headers of body</string>
+          <key>begin</key>
+          <string>\+</string>
+          <key>end</key>
+          <string>^(?=(?=\S)|(?=\s+\+))</string>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>text.xml</string>
+        </dict>
+      </array>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>blueprint.response</string>
+      <key>begin</key>
+      <string>\+ (Request|Response) (\d+)? ?\(?(\(.*)\)?</string>
+      <key>end</key>
+      <string>^(?=\S)</string>
+      <key>captures</key>
+      <dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>constant.numeric</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>variable.language.fenced.markdown</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#http-headers</string>
+        </dict>
+      </array>
+    </dict>
+
+    <dict>
       <key>begin</key>
       <string>(```|~~~)\s*(c)\s*$</string>
       <key>captures</key>
@@ -450,28 +587,6 @@
           <string>source.js</string>
         </dict>
       </array>
-    </dict>
-
-    <dict>
-      <key>captures</key>
-      <dict>
-        <key>2</key>
-        <dict>
-          <key>name</key>
-          <string>constant.numeric</string>
-        </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>variable.language.fenced.markdown</string>
-        </dict>
-      </dict>
-      <key>begin</key>
-      <string>\+ (Request|Response) (\d+)? ?\(?(.*)\)?</string>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>name</key>
-      <string>blueprint.response</string>
     </dict>
 
     <dict>
@@ -1755,6 +1870,33 @@
         <dict>
           <key>include</key>
           <string>#inline</string>
+        </dict>
+      </array>
+    </dict>
+    <key>http-headers</key>
+    <dict>
+      <key>begin</key>
+      <string>\+ Headers</string>
+      <key>end</key>
+      <string>^(?=(?=\S)|(?=\s+\+))</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>(.*?):(.*)</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>keyword</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>header-value</string>
+            </dict>
+          </dict>
         </dict>
       </array>
     </dict>
