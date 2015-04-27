@@ -30,6 +30,10 @@
     </dict>
     <dict>
       <key>include</key>
+      <string>#blueprint_data_structures</string>
+    </dict>
+    <dict>
+      <key>include</key>
       <string>#blueprint_action</string>
     </dict>
     <dict>
@@ -44,7 +48,7 @@
       <key>name</key>
       <string>blueprint.response.json</string>
       <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*json\)?)</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*json\)?)</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
@@ -77,7 +81,7 @@
         </dict>
         <dict>
           <key>begin</key>
-          <string>([-+*]) Body</string>
+          <string>([-+*]) [Bb]ody</string>
           <key>end</key>
           <string>^(?=(?=\S)|(?=\s+\+))</string>
           <key>beginCaptures</key>
@@ -110,7 +114,7 @@
       <key>name</key>
       <string>blueprint.response.xml</string>
       <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*xml\)?)</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*xml\)?)</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
@@ -143,7 +147,7 @@
         </dict>
         <dict>
           <key>begin</key>
-          <string>([-+*]) Body</string>
+          <string>([-+*]) [Bb]ody</string>
           <key>end</key>
           <string>^(?=(?=\S)|(?=\s+\+))</string>
           <key>beginCaptures</key>
@@ -176,7 +180,7 @@
       <key>name</key>
       <string>blueprint.response</string>
       <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*)\)?</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*)\)?</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
@@ -227,7 +231,7 @@
     <key>blueprint_group</key>
     <dict>
       <key>match</key>
-      <string>^#{1,2} Group.*\n?</string>
+      <string>^#{1,2} [Gg]roup.*\n?</string>
       <key>name</key>
       <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
     </dict>
@@ -266,6 +270,28 @@
         </dict>
       </dict>
     </dict>
+    <key>blueprint_data_structures</key>
+    <dict>
+      <key>begin</key>
+      <string>^(# [Dd]ata [Ss]tructures)</string>
+      <key>end</key>
+      <string>^(?=#\s)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>text.html.markdown.source.gfm.mson</string>
+        </dict>
+      </array>
+    </dict>
     <key>blueprint_shorthand</key>
     <dict>
       <key>match</key>
@@ -284,7 +310,7 @@
     <key>http-headers</key>
     <dict>
       <key>begin</key>
-      <string>([-+*]) Headers</string>
+      <string>([-+*]) [Hh]eaders</string>
       <key>end</key>
       <string>^(?=(?=\S)|(?=\s+\+))</string>
       <key>beginCaptures</key>
@@ -322,7 +348,7 @@
       <array>
         <dict>
           <key>begin</key>
-          <string>^([-+*]) (Attributes|Parameters)</string>
+          <string>^([-+*]) ([Aa]ttributes|[Pp]arameters)</string>
           <key>end</key>
           <string>^(?=\S)</string>
           <key>beginCaptures</key>
@@ -345,7 +371,7 @@
         </dict>
         <dict>
           <key>begin</key>
-          <string>^(\s+)([-+*]) (Attributes|Parameters)</string>
+          <string>^(\s+)([-+*]) ([Aa]ttributes|[Pp]arameters)</string>
           <key>end</key>
           <string>^(?!\1|\n)|(?=\1[-+*])</string>
           <key>beginCaptures</key>
