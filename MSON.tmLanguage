@@ -4,218 +4,17 @@
 <dict>
   <key>fileTypes</key>
   <array>
-    <string>apib</string>
+    <string>mson</string>
   </array>
-  <key>foldingStartMarker</key>
-  <string>(?x)
-    (&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\b.*?&gt;
-    |&lt;!--(?!.*--&gt;)
-    |\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
-    )</string>
-  <key>foldingStopMarker</key>
-  <string>(?x)
-    (&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)&gt;
-    |^\s*--&gt;
-    |(^|\s)\}
-    )</string>
   <key>keyEquivalent</key>
   <string>^~M</string>
   <key>name</key>
-  <string>API Blueprint</string>
+  <string>MSON</string>
   <key>patterns</key>
   <array>
     <dict>
       <key>include</key>
-      <string>#blueprint_group</string>
-    </dict>
-    <dict>
-      <key>include</key>
-      <string>#blueprint_action</string>
-    </dict>
-    <dict>
-      <key>include</key>
-      <string>#blueprint_resource</string>
-    </dict>
-    <dict>
-      <key>include</key>
-      <string>#blueprint_shorthand</string>
-    </dict>
-    <dict>
-      <key>name</key>
-      <string>blueprint.response.json</string>
-      <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*json\)?)</string>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>beginCaptures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>variable.unordered.list.gfm</string>
-        </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>constant.numeric</string>
-        </dict>
-        <key>4</key>
-        <dict>
-          <key>name</key>
-          <string>variable.language.fenced.markdown</string>
-        </dict>
-      </dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#http-headers</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#mson-block</string>
-        </dict>
-        <dict>
-          <key>begin</key>
-          <string>([-+*]) Body</string>
-          <key>end</key>
-          <string>^(?=(?=\S)|(?=\s+\+))</string>
-          <key>beginCaptures</key>
-          <dict>
-            <key>1</key>
-            <dict>
-              <key>name</key>
-              <string>variable.unordered.list.gfm</string>
-            </dict>
-          </dict>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>source.js</string>
-            </dict>
-          </array>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#response-unstyled-section</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>source.js</string>
-        </dict>
-      </array>
-    </dict>
-    <dict>
-      <key>name</key>
-      <string>blueprint.response.xml</string>
-      <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*xml\)?)</string>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>beginCaptures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>variable.unordered.list.gfm</string>
-        </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>constant.numeric</string>
-        </dict>
-        <key>4</key>
-        <dict>
-          <key>name</key>
-          <string>variable.language.fenced.markdown</string>
-        </dict>
-      </dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#http-headers</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#mson-block</string>
-        </dict>
-        <dict>
-          <key>begin</key>
-          <string>([-+*]) Body</string>
-          <key>end</key>
-          <string>^(?=(?=\S)|(?=\s+\+))</string>
-          <key>beginCaptures</key>
-          <dict>
-            <key>1</key>
-            <dict>
-              <key>name</key>
-              <string>variable.unordered.list.gfm</string>
-            </dict>
-          </dict>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>text.xml</string>
-            </dict>
-          </array>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#response-unstyled-section</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>text.xml</string>
-        </dict>
-      </array>
-    </dict>
-    <dict>
-      <key>name</key>
-      <string>blueprint.response</string>
-      <key>begin</key>
-      <string>([-+*]) (Request|Response) (\d+)? ?\(?(\(.*)\)?</string>
-      <key>end</key>
-      <string>^(?=\S)</string>
-      <key>beginCaptures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>variable.unordered.list.gfm</string>
-        </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>constant.numeric</string>
-        </dict>
-        <key>4</key>
-        <dict>
-          <key>name</key>
-          <string>variable.language.fenced.markdown</string>
-        </dict>
-      </dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>include</key>
-          <string>#http-headers</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#mson-block</string>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>#response-unstyled-section</string>
-        </dict>
-      </array>
-    </dict>
-    <dict>
-      <key>include</key>
-      <string>#mson-block</string>
+      <string>#mson-field</string>
     </dict>
     <dict>
       <key>include</key>
@@ -224,70 +23,111 @@
   </array>
   <key>repository</key>
   <dict>
-    <key>blueprint_group</key>
+    <key>mson-field</key>
     <dict>
-      <key>match</key>
-      <string>^#{1,2} Group.*\n?</string>
-      <key>name</key>
-      <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>comment</key>
+          <string>+ name: sample (attributes) - description</string>
+          <key>begin</key>
+          <string>^(?=\s*[-*+].*?:.*?\(.*?\).*?(-|$))</string>
+          <key>end</key>
+          <string>$</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-name</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-example-value</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-attributes</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-description</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>comment</key>
+          <string>+ name: sample - description</string>
+          <key>begin</key>
+          <string>^(?=\s*[-*+].*?:.*?(-|$))</string>
+          <key>end</key>
+          <string>$</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-name</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-example-value</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-description</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>comment</key>
+          <string>+ name (attributes) - description</string>
+          <key>begin</key>
+          <string>^(?=\s*[-*+].*?\(.*?\).*?(-|$))</string>
+          <key>end</key>
+          <string>$</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-name</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-attributes</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-description</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>comment</key>
+          <string>+ name - description</string>
+          <key>begin</key>
+          <string>^(?=\s*[-*+].*?(-|$))</string>
+          <key>end</key>
+          <string>$</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-name</string>
+            </dict>
+            <dict>
+              <key>include</key>
+              <string>#mson-field-description</string>
+            </dict>
+          </array>
+        </dict>
+      </array>
     </dict>
-    <key>blueprint_resource</key>
+    <key>mson-field-name</key>
     <dict>
-      <key>match</key>
-      <string>^#{1,2} .*\[(.*)\]\n?</string>
       <key>name</key>
-      <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
+      <string>mson.field.name</string>
+      <key>match</key>
+      <string>^\s*([-*+]).*?(?= ?(:|\(|-|$))</string>
       <key>captures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>meta.link.inet.markdown markup.underline.link.markdown</string>
-        </dict>
-      </dict>
-    </dict>
-    <key>blueprint_action</key>
-    <dict>
-      <key>match</key>
-      <string>^#{1,3} .*\[(HEAD|GET|PUT|POST|PATCH|DELETE)(.*)\]\n?</string>
-      <key>name</key>
-      <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
-      <key>captures</key>
-      <dict>
-        <key>1</key>
-        <dict>
-          <key>name</key>
-          <string>markup.quote</string>
-        </dict>
-        <key>2</key>
-        <dict>
-          <key>name</key>
-          <string>meta.link.inet.markdown markup.underline.link.markdown</string>
-        </dict>
-      </dict>
-    </dict>
-    <key>blueprint_shorthand</key>
-    <dict>
-      <key>match</key>
-      <string>^# (HEAD|GET|PUT|POST|PATCH|DELETE) (.*)\n?</string>
-      <key>name</key>
-      <string>markup.heading.markdown punctuation.definition.heading.markdown</string>
-      <key>captures</key>
-      <dict>
-        <key>2</key>
-        <dict>
-          <key>name</key>
-          <string>meta.link.inet.markdown markup.underline.link.markdown</string>
-        </dict>
-      </dict>
-    </dict>
-    <key>http-headers</key>
-    <dict>
-      <key>begin</key>
-      <string>([-+*]) Headers</string>
-      <key>end</key>
-      <string>^(?=(?=\S)|(?=\s+\+))</string>
-      <key>beginCaptures</key>
       <dict>
         <key>1</key>
         <dict>
@@ -295,95 +135,65 @@
           <string>variable.unordered.list.gfm</string>
         </dict>
       </dict>
+    </dict>
+    <key>mson-example-value</key>
+    <dict>
+      <key>match</key>
+      <string>:(.*?)(?=\(|-|$)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>mson.field.example markup.raw.inline</string>
+        </dict>
+      </dict>
+    </dict>
+    <key>mson-field-attributes</key>
+    <dict>
+      <key>name</key>
+      <string>mson.field.attributes</string>
+      <key>begin</key>
+      <string>(?&lt;=[^\(])\((?=.*?\))</string>
+      <key>end</key>
+      <string>\)</string>
       <key>patterns</key>
       <array>
         <dict>
+          <key>name</key>
+          <string>keyword</string>
           <key>match</key>
-          <string>(.*?):(.*)</string>
-          <key>captures</key>
-          <dict>
-            <key>1</key>
-            <dict>
-              <key>name</key>
-              <string>keyword</string>
-            </dict>
-            <key>2</key>
-            <dict>
-              <key>name</key>
-              <string>header-value</string>
-            </dict>
-          </dict>
+          <string>(required|optional|variable|fixed|sample|default)</string>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>entity.name.class</string>
+          <key>match</key>
+          <string>(boolean|string|number|enum|object|array|\*)</string>
         </dict>
       </array>
     </dict>
-    <key>mson-block</key>
+    <key>mson-field-description</key>
     <dict>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>begin</key>
-          <string>^([-+*]) (Attributes|Parameters)</string>
-          <key>end</key>
-          <string>^(?=\S)</string>
-          <key>beginCaptures</key>
-          <dict>
-            <key>1</key>
-            <dict>
-              <key>name</key>
-              <string>variable.unordered.list.gfm</string>
-            </dict>
-          </dict>
-          <key>name</key>
-          <string>mson-block</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>text.html.markdown.source.gfm.mson</string>
-            </dict>
-          </array>
-        </dict>
-        <dict>
-          <key>begin</key>
-          <string>^(\s+)([-+*]) (Attributes|Parameters)</string>
-          <key>end</key>
-          <string>^(?!\1|\n)|(?=\1[-+*])</string>
-          <key>beginCaptures</key>
-          <dict>
-            <key>2</key>
-            <dict>
-              <key>name</key>
-              <string>variable.unordered.list.gfm</string>
-            </dict>
-          </dict>
-          <key>name</key>
-          <string>mson-block</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>text.html.markdown.source.gfm.mson</string>
-            </dict>
-          </array>
-        </dict>
-      </array>
-    </dict>
-    <key>response-unstyled-section</key>
-    <dict>
-      <key>comment</key>
-      <string>Ignores list items that aren't the previously matched headers or body</string>
       <key>begin</key>
-      <string>([-+*])</string>
+      <string> (-) </string>
       <key>end</key>
-      <string>^(?=(?=\S)|(?=\s+[-+*]))</string>
+      <string>$</string>
       <key>beginCaptures</key>
       <dict>
         <key>1</key>
         <dict>
           <key>name</key>
-          <string>variable.unordered.list.gfm</string>
+          <string>comment</string>
         </dict>
       </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>#gfm</string>
+        </dict>
+      </array>
     </dict>
     <!--
 
@@ -2024,8 +1834,8 @@
     </dict>
   </dict>
   <key>scopeName</key>
-  <string>text.html.markdown.source.gfm.apib</string>
+  <string>text.html.markdown.source.gfm.mson</string>
   <key>uuid</key>
-  <string>dd477cf1-34c4-49d2-ba09-f8445676ccd4</string>
+  <string>dd477cf1-34c4-49d2-ba09-f8445676cce6</string>
 </dict>
 </plist>
