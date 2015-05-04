@@ -24,7 +24,7 @@ Refer to [Drafter](https://github.com/apiaryio/drafter#install) installation not
 This plugin offers linting of your blueprints using the [SublimeLinter3](https://github.com/SublimeLinter/SublimeLinter3) plugin framework. In order for linting to work please [install](http://sublimelinter.readthedocs.org/en/latest/installation.html) `SublimeLinter3`.
 
 ### Markdown Highlighting (optional)
-Note the API Blueprint Sublime Text syntax support relies on Markdown highlighing support in the color scheme used. For best results use a color scheme that supports Markdown-specific scopes (e.g. `markdown: heading`) such as [Monokai extended](https://github.com/jonschlinkert/sublime-monokai-extended) and [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended).
+Note the API Blueprint Sublime Text syntax support relies on Markdown highlighing support in the color scheme used. For best results use a color scheme that supports Markdown-specific scopes (e.g. `markdown: heading`) such as [Monokai extended](https://github.com/jonschlinkert/sublime-monokai-extended), and install [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended).
 
 ## Installation
 ### Using Package Control
