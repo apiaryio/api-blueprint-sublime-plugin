@@ -48,7 +48,7 @@
       <key>name</key>
       <string>blueprint.response.json</string>
       <key>begin</key>
-      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*json(?:[ ;\/]+.*)?\)+)</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)?(?: (\(.*\/+json(?:[ ;\/]+.*)?\)))+</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
@@ -114,7 +114,7 @@
       <key>name</key>
       <string>blueprint.response.xml</string>
       <key>begin</key>
-      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*xml(?:[ ;\/]+.*)?\)+)</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)?(?: (\(.*\/+xml(?:[ ;\/]+.*)?\)))+</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
@@ -180,7 +180,7 @@
       <key>name</key>
       <string>blueprint.response</string>
       <key>begin</key>
-      <string>([-+*]) ([Rr]equest|[Rr]esponse) (\d+)? ?\(?(\(.*)\)+</string>
+      <string>([-+*]) ([Rr]equest|[Rr]esponse) ?(\d+)?(?: (\(.*\))+)?</string>
       <key>end</key>
       <string>^(?=\S)</string>
       <key>beginCaptures</key>
