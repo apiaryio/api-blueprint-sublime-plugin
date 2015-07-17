@@ -139,7 +139,7 @@
     <key>mson-example-value</key>
     <dict>
       <key>match</key>
-      <string>:(.*?)(?=\(|-|$)</string>
+      <string>:\s(`.*?`|(.*?)(?=\(|-|$))</string>
       <key>captures</key>
       <dict>
         <key>1</key>
