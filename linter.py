@@ -12,6 +12,7 @@
 
 """This module exports the Apiblueprint plugin class."""
 
+
 def ApiBlueprintFactory():
     """ Define API Blueprint Linter Class"""
 
@@ -50,11 +51,11 @@ def ApiBlueprintFactory():
                 line = int(line) - self.line_col_base[0]
 
             return match, line, col, error, warning, message, near
-            
+
 try:
     """Attempt to import SublimeLinter3"""
     from SublimeLinter.lint import Linter, util
     ApiBlueprintFactory()
-    
+
 except ImportError:
     print("No SublimeLinter3 installed - Install SublimeLinter3 to lint your API blueprints (ST3 Only)")
