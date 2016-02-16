@@ -1,11 +1,11 @@
 [
   {
-    "caption": "API Blueprint: Parse to YAML AST",
+    "caption": "API Blueprint: Parse to API Elements (YAML)",
     "command": "parse_yaml_ast",
     "args": {"opt": ["-f", "yaml"]}
   },
   {
-    "caption": "API Blueprint: Parse to JSON AST",
+    "caption": "API Blueprint: Parse to API Elements (JSON)",
     "command": "parse_json_ast",
     "args": {"opt": ["-f", "json"]}
   }
