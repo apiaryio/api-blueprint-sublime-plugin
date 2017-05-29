@@ -163,7 +163,7 @@
           <key>name</key>
           <string>keyword</string>
           <key>match</key>
-          <string>(required|optional|variable|fixed|sample|default)</string>
+          <string>(required|optional|variable|fixed(-type)?|sample|default|nullable)</string>
         </dict>
         <dict>
           <key>name</key>
