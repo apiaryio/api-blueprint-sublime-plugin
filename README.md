@@ -14,8 +14,7 @@ In order for this plugin to work properly you need to have the API Blueprint com
 To install `Drafter` on OS X using run the following command:
 
 ```sh
-$ brew install --HEAD \
-  https://raw.github.com/apiaryio/drafter/master/tools/homebrew/drafter.rb
+$ brew install drafter
 ```
 
 Refer to [Drafter](https://github.com/apiaryio/drafter#install) installation notes for details on installing on [OS X & Linux](https://github.com/apiaryio/drafter#drafter-command-line-tool) or [Windows](https://github.com/apiaryio/drafter/wiki/Building-on-Windows).
